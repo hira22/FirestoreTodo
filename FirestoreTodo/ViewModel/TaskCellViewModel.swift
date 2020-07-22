@@ -7,11 +7,30 @@
 //
 
 import Foundation
+import Combine
 
-class TaskCellViewModel: ObservableObject {
-    @Published var tasks: [Task]
+class TaskCellViewModel: ObservableObject, Identifiable {
+    @Published var task: Task
     
-    init() {
-        tasks = testDataTasks
+    var id: String = ""
+    @Published var completionStateIconName: String = ""
+    
+    private var cancellables = Set<AnyCancellable>()
+    
+    init(task: Task) {
+        self.task = task
+        
+        $task.map { (task: Task) in
+            task.completed ? "checkmark.circle.fill" : "circle"
+        }
+        .assign(to: \.completionStateIconName, on: self)
+        .store(in: &cancellables)
+        
+        $task.map {(task: Task) in
+            task.id
+        }
+        .assign(to: \.id, on: self)
+        .store(in: &cancellables)
+        
     }
 }
