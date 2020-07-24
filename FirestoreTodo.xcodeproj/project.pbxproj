@@ -3,11 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		590A4EC3B5D70489772F041E /* Pods_FirestoreTodo_FirestoreTodoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 050DCE86A74A916882EA9AB2 /* Pods_FirestoreTodo_FirestoreTodoUITests.framework */; };
+		2FE3F3BC17D215D3EA16E9B7 /* Pods_FirestoreTodoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 090FE795A9E78AD014640CF3 /* Pods_FirestoreTodoUITests.framework */; };
 		65FCD3F3FDE5A138462C7C9F /* Pods_FirestoreTodoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FCD480E10D806794F58180C /* Pods_FirestoreTodoTests.framework */; };
 		B6579CF624C8660000CCD5BF /* TaskListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6579CF524C8660000CCD5BF /* TaskListViewModel.swift */; };
 		B6DFD24524C85E2C00EDA575 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6DFD24424C85E2C00EDA575 /* AppDelegate.swift */; };
@@ -41,7 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		050DCE86A74A916882EA9AB2 /* Pods_FirestoreTodo_FirestoreTodoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FirestoreTodo_FirestoreTodoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		090FE795A9E78AD014640CF3 /* Pods_FirestoreTodoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FirestoreTodoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FCD480E10D806794F58180C /* Pods_FirestoreTodoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FirestoreTodoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		47FEFF94702EC952BC3A39DD /* Pods-FirestoreTodoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirestoreTodoTests.debug.xcconfig"; path = "Target Support Files/Pods-FirestoreTodoTests/Pods-FirestoreTodoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5F0CE73613494D964335753A /* Pods-FirestoreTodo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirestoreTodo.release.xcconfig"; path = "Target Support Files/Pods-FirestoreTodo/Pods-FirestoreTodo.release.xcconfig"; sourceTree = "<group>"; };
@@ -65,6 +65,8 @@
 		B6DFD27924C8634500EDA575 /* TaskCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCellViewModel.swift; sourceTree = "<group>"; };
 		CB640D4BB8DFF36B19F810FA /* Pods_FirestoreTodo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FirestoreTodo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D96820AA6DA3DCBC60F6937F /* Pods-FirestoreTodoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirestoreTodoTests.release.xcconfig"; path = "Target Support Files/Pods-FirestoreTodoTests/Pods-FirestoreTodoTests.release.xcconfig"; sourceTree = "<group>"; };
+		EBB53B3593C7800341DB3185 /* Pods-FirestoreTodoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirestoreTodoUITests.debug.xcconfig"; path = "Target Support Files/Pods-FirestoreTodoUITests/Pods-FirestoreTodoUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		EF8D3ED7E3786CC90CFFFE1D /* Pods-FirestoreTodoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirestoreTodoUITests.release.xcconfig"; path = "Target Support Files/Pods-FirestoreTodoUITests/Pods-FirestoreTodoUITests.release.xcconfig"; sourceTree = "<group>"; };
 		F4D20DD96F6A870BF615FCD2 /* Pods-FirestoreTodo-FirestoreTodoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirestoreTodo-FirestoreTodoUITests.debug.xcconfig"; path = "Target Support Files/Pods-FirestoreTodo-FirestoreTodoUITests/Pods-FirestoreTodo-FirestoreTodoUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		FD7E085520C3769B8B43339B /* Pods-FirestoreTodo-FirestoreTodoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirestoreTodo-FirestoreTodoUITests.release.xcconfig"; path = "Target Support Files/Pods-FirestoreTodo-FirestoreTodoUITests/Pods-FirestoreTodo-FirestoreTodoUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -90,7 +92,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				590A4EC3B5D70489772F041E /* Pods_FirestoreTodo_FirestoreTodoUITests.framework in Frameworks */,
+				2FE3F3BC17D215D3EA16E9B7 /* Pods_FirestoreTodoUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -106,6 +108,8 @@
 				FD7E085520C3769B8B43339B /* Pods-FirestoreTodo-FirestoreTodoUITests.release.xcconfig */,
 				47FEFF94702EC952BC3A39DD /* Pods-FirestoreTodoTests.debug.xcconfig */,
 				D96820AA6DA3DCBC60F6937F /* Pods-FirestoreTodoTests.release.xcconfig */,
+				EBB53B3593C7800341DB3185 /* Pods-FirestoreTodoUITests.debug.xcconfig */,
+				EF8D3ED7E3786CC90CFFFE1D /* Pods-FirestoreTodoUITests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -114,8 +118,8 @@
 			isa = PBXGroup;
 			children = (
 				CB640D4BB8DFF36B19F810FA /* Pods_FirestoreTodo.framework */,
-				050DCE86A74A916882EA9AB2 /* Pods_FirestoreTodo_FirestoreTodoUITests.framework */,
 				2FCD480E10D806794F58180C /* Pods_FirestoreTodoTests.framework */,
+				090FE795A9E78AD014640CF3 /* Pods_FirestoreTodoUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -228,6 +232,7 @@
 				B6DFD23D24C85E2C00EDA575 /* Sources */,
 				B6DFD23E24C85E2C00EDA575 /* Frameworks */,
 				B6DFD23F24C85E2C00EDA575 /* Resources */,
+				5851D281047DFE467D63DF67 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -384,11 +389,28 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-FirestoreTodo-FirestoreTodoUITests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-FirestoreTodoUITests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5851D281047DFE467D63DF67 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FirestoreTodo/Pods-FirestoreTodo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FirestoreTodo/Pods-FirestoreTodo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FirestoreTodo/Pods-FirestoreTodo-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		835EE3DC6BDFEAF08C0DA1E8 /* [CP] Check Pods Manifest.lock */ = {
@@ -475,6 +497,7 @@
 		B6DFD26924C85E2D00EDA575 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -535,6 +558,7 @@
 		B6DFD26A24C85E2D00EDA575 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -590,6 +614,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A88C6A2062C1B83B14F351BE /* Pods-FirestoreTodo.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"FirestoreTodo/Preview Content\"";
@@ -611,6 +636,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5F0CE73613494D964335753A /* Pods-FirestoreTodo.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"FirestoreTodo/Preview Content\"";
@@ -632,7 +658,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 47FEFF94702EC952BC3A39DD /* Pods-FirestoreTodoTests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8ER86CP2SB;
@@ -655,7 +681,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D96820AA6DA3DCBC60F6937F /* Pods-FirestoreTodoTests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8ER86CP2SB;
@@ -676,9 +702,9 @@
 		};
 		B6DFD27224C85E2D00EDA575 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F4D20DD96F6A870BF615FCD2 /* Pods-FirestoreTodo-FirestoreTodoUITests.debug.xcconfig */;
+			baseConfigurationReference = EBB53B3593C7800341DB3185 /* Pods-FirestoreTodoUITests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8ER86CP2SB;
 				INFOPLIST_FILE = FirestoreTodoUITests/Info.plist;
@@ -697,9 +723,9 @@
 		};
 		B6DFD27324C85E2D00EDA575 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FD7E085520C3769B8B43339B /* Pods-FirestoreTodo-FirestoreTodoUITests.release.xcconfig */;
+			baseConfigurationReference = EF8D3ED7E3786CC90CFFFE1D /* Pods-FirestoreTodoUITests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8ER86CP2SB;
 				INFOPLIST_FILE = FirestoreTodoUITests/Info.plist;

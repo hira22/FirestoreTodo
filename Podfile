@@ -1,11 +1,15 @@
 # Uncomment the next line to define a global platform for your project
-# platform :ios, '9.0'
+ platform :ios, '13.6'
 
 target 'FirestoreTodo' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
 
   # Pods for FirestoreTodo
+  pod 'Firebase/Auth'
+  pod 'Firebase/Analytics'
+  pod 'Firebase/Firestore'
+  pod 'FirebaseFirestoreSwift'
 
   target 'FirestoreTodoTests' do
     inherit! :search_paths
@@ -13,6 +17,7 @@ target 'FirestoreTodo' do
   end
 
   target 'FirestoreTodoUITests' do
+    inherit! :search_paths
     # Pods for testing
   end
 
