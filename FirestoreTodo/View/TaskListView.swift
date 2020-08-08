@@ -12,6 +12,7 @@ struct TaskListView: View {
     @ObservedObject var taskListVM = TaskListViewModel()
     
     @State var presentAddNewItem: Bool = false
+    @State private var showSignInForm: Bool = false
     
     var body: some View {
         NavigationView {
@@ -31,6 +32,8 @@ struct TaskListView: View {
                 }
                 AddNewTaskButton(presentAddNewItem: $presentAddNewItem)
             }
+            .sheet(isPresented: self.$showSignInForm) { SignInView() }
+            .navigationBarItems(trailing: SignInButton(show: $showSignInForm))
             .navigationBarTitle("Tasks")
         }
     }
@@ -83,5 +86,14 @@ struct AddNewTaskButton: View {
             }
         }
         .padding()
+    }
+}
+
+struct SignInButton: View {
+    @Binding var show: Bool
+    var body: some View {
+        Button(action: { self.show.toggle() }) {
+            Image(systemName: "person.circle")
+        }
     }
 }
