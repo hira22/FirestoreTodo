@@ -10,27 +10,41 @@ import Foundation
 import Combine
 
 class TaskCellViewModel: ObservableObject, Identifiable {
+    @Published var taskRepository: TaskRepository = .init()
     @Published var task: Task
     
     var id: String = ""
     @Published var completionStateIconName: String = ""
     
-    private var cancellables = Set<AnyCancellable>()
+    private var cancellableSet = Set<AnyCancellable>()
     
     init(task: Task) {
         self.task = task
         
-        $task.map { (task: Task) in
+        $task
+            .map { (task: Task) in
             task.completed ? "checkmark.circle.fill" : "circle"
         }
         .assign(to: \.completionStateIconName, on: self)
-        .store(in: &cancellables)
+        .store(in: &cancellableSet)
         
-        $task.map {(task: Task) in
+        $task
+            .compactMap {(task: Task) in
             task.id
         }
         .assign(to: \.id, on: self)
-        .store(in: &cancellables)
+        .store(in: &cancellableSet)
         
+        $task
+            .dropFirst()
+            .debounce(for: 0.8, scheduler: RunLoop.main)
+            .sink { (task: Task) in
+                self.taskRepository.updateTask(task)
+        }
+        .store(in: &cancellableSet)
+    }
+    
+    func removeTask() {
+        self.taskRepository.removeTask(task)
     }
 }

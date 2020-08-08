@@ -20,6 +20,7 @@ struct TaskListView: View {
                     ForEach(taskListVM.taskCellViewModels) { taskCellVM in
                         TaskCell(taskCellVM: taskCellVM)
                     }
+                    .onDelete(perform: remove)
                     
                     if presentAddNewItem {
                         TaskCell(taskCellVM: TaskCellViewModel(task: Task(title: "", completed: false))) { (task: Task) in
@@ -32,6 +33,10 @@ struct TaskListView: View {
             }
             .navigationBarTitle("Tasks")
         }
+    }
+    
+    func remove(offsets: IndexSet) {
+        taskListVM.taskCellViewModels[offsets.first!].removeTask()
     }
 }
 

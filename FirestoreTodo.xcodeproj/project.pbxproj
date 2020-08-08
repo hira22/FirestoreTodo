@@ -10,6 +10,8 @@
 		2FE3F3BC17D215D3EA16E9B7 /* Pods_FirestoreTodoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 090FE795A9E78AD014640CF3 /* Pods_FirestoreTodoUITests.framework */; };
 		65FCD3F3FDE5A138462C7C9F /* Pods_FirestoreTodoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FCD480E10D806794F58180C /* Pods_FirestoreTodoTests.framework */; };
 		B6579CF624C8660000CCD5BF /* TaskListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6579CF524C8660000CCD5BF /* TaskListViewModel.swift */; };
+		B6A8B1B924D6D0AB0045F1A2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B6A8B1B824D6D0AB0045F1A2 /* GoogleService-Info.plist */; };
+		B6A8B1C924DE71E60045F1A2 /* TaskRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A8B1C824DE71E60045F1A2 /* TaskRepository.swift */; };
 		B6DFD24524C85E2C00EDA575 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6DFD24424C85E2C00EDA575 /* AppDelegate.swift */; };
 		B6DFD24724C85E2C00EDA575 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6DFD24624C85E2C00EDA575 /* SceneDelegate.swift */; };
 		B6DFD24924C85E2C00EDA575 /* TaskListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6DFD24824C85E2C00EDA575 /* TaskListView.swift */; };
@@ -47,6 +49,8 @@
 		5F0CE73613494D964335753A /* Pods-FirestoreTodo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirestoreTodo.release.xcconfig"; path = "Target Support Files/Pods-FirestoreTodo/Pods-FirestoreTodo.release.xcconfig"; sourceTree = "<group>"; };
 		A88C6A2062C1B83B14F351BE /* Pods-FirestoreTodo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirestoreTodo.debug.xcconfig"; path = "Target Support Files/Pods-FirestoreTodo/Pods-FirestoreTodo.debug.xcconfig"; sourceTree = "<group>"; };
 		B6579CF524C8660000CCD5BF /* TaskListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListViewModel.swift; sourceTree = "<group>"; };
+		B6A8B1B824D6D0AB0045F1A2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		B6A8B1C824DE71E60045F1A2 /* TaskRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskRepository.swift; sourceTree = "<group>"; };
 		B6DFD24124C85E2C00EDA575 /* FirestoreTodo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FirestoreTodo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6DFD24424C85E2C00EDA575 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B6DFD24624C85E2C00EDA575 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -124,6 +128,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		B6A8B1C724DE71CC0045F1A2 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				B6A8B1C824DE71E60045F1A2 /* TaskRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
 		B6DFD23824C85E2C00EDA575 = {
 			isa = PBXGroup;
 			children = (
@@ -149,6 +161,7 @@
 		B6DFD24324C85E2C00EDA575 /* FirestoreTodo */ = {
 			isa = PBXGroup;
 			children = (
+				B6A8B1C724DE71CC0045F1A2 /* Repository */,
 				B6DFD27424C85F0A00EDA575 /* Model */,
 				B6DFD27B24C8643200EDA575 /* ViewModel */,
 				B6DFD27724C85FE800EDA575 /* App */,
@@ -156,6 +169,7 @@
 				B6DFD24A24C85E2D00EDA575 /* Assets.xcassets */,
 				B6DFD24F24C85E2D00EDA575 /* LaunchScreen.storyboard */,
 				B6DFD25224C85E2D00EDA575 /* Info.plist */,
+				B6A8B1B824D6D0AB0045F1A2 /* GoogleService-Info.plist */,
 				B6DFD24C24C85E2D00EDA575 /* Preview Content */,
 			);
 			path = FirestoreTodo;
@@ -332,6 +346,7 @@
 				B6DFD25124C85E2D00EDA575 /* LaunchScreen.storyboard in Resources */,
 				B6DFD24E24C85E2D00EDA575 /* Preview Assets.xcassets in Resources */,
 				B6DFD24B24C85E2D00EDA575 /* Assets.xcassets in Resources */,
+				B6A8B1B924D6D0AB0045F1A2 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -446,6 +461,7 @@
 				B6DFD24524C85E2C00EDA575 /* AppDelegate.swift in Sources */,
 				B6DFD24724C85E2C00EDA575 /* SceneDelegate.swift in Sources */,
 				B6DFD27A24C8634500EDA575 /* TaskCellViewModel.swift in Sources */,
+				B6A8B1C924DE71E60045F1A2 /* TaskRepository.swift in Sources */,
 				B6DFD24924C85E2C00EDA575 /* TaskListView.swift in Sources */,
 				B6579CF624C8660000CCD5BF /* TaskListViewModel.swift in Sources */,
 			);

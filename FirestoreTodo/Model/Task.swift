@@ -7,12 +7,16 @@
 //
 
 import Foundation
+import FirebaseFirestore
+import FirebaseFirestoreSwift
 
-struct Task: Identifiable {
-    var id = UUID().uuidString
+struct Task: Codable, Identifiable {
+    @DocumentID var id: String?
     
     var title: String
     var completed: Bool
+    
+    @ServerTimestamp var createdAt: Timestamp?
 }
 
 #if DEBUG
