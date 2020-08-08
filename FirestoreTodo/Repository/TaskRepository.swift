@@ -6,22 +6,33 @@
 //  Copyright © 2020 hiraoka. All rights reserved.
 //
 
+import Combine
 import Foundation
 
 import FirebaseFirestore
 import FirebaseFirestoreSwift
 
 class TaskRepository: ObservableObject {
-    private let db = Firestore.firestore()
-    
     @Published var tasks: [Task] = []
     
+    private var tasksCollectionRef: CollectionReference?
+    
+    private var userRepository: UserRepository = .init()
+    
+    private var cancellableSet: Set<AnyCancellable> = []
+    
     init() {
-        loadData()
+        userRepository.$currentUser
+            .filter { $0 != nil }
+            .sink { (user: User?) in
+                self.tasksCollectionRef = db.collection("users").document(user!.id!).collection("tasks")
+                self.loadData()
+            }
+            .store(in: &cancellableSet)
     }
     
     private func loadData() {
-        db.collection("tasks").order(by: "createdAt")
+        tasksCollectionRef?.order(by: "createdAt")
             .addSnapshotListener { (querySnapshot: QuerySnapshot?, _: Error?) in
                 if let querySnapshot = querySnapshot {
                     self.tasks = querySnapshot.documents
@@ -33,16 +44,16 @@ class TaskRepository: ObservableObject {
     }
     
     func addTask(_ task: Task) {
-        _ = try! db.collection("tasks").addDocument(from: task)
+        _ = try! tasksCollectionRef?.addDocument(from: task)
     }
     
     func updateTask(_ task: Task) {
         guard let id = task.id else { return }
-        try! db.collection("tasks").document(id).setData(from: task)
+        try! tasksCollectionRef?.document(id).setData(from: task)
     }
     
     func removeTask(_ task: Task) {
         guard let id = task.id else { return }
-        db.collection("tasks").document(id).delete()
+        tasksCollectionRef?.document(id).delete()
     }
 }

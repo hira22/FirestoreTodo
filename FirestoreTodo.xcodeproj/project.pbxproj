@@ -12,6 +12,9 @@
 		B6579CF624C8660000CCD5BF /* TaskListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6579CF524C8660000CCD5BF /* TaskListViewModel.swift */; };
 		B6A8B1B924D6D0AB0045F1A2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B6A8B1B824D6D0AB0045F1A2 /* GoogleService-Info.plist */; };
 		B6A8B1C924DE71E60045F1A2 /* TaskRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A8B1C824DE71E60045F1A2 /* TaskRepository.swift */; };
+		B6A8B1CC24DEB5EA0045F1A2 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A8B1CB24DEB5EA0045F1A2 /* UserRepository.swift */; };
+		B6A8B1CE24DEB6FC0045F1A2 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A8B1CD24DEB6FC0045F1A2 /* User.swift */; };
+		B6A8B1D024DEB7F40045F1A2 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A8B1CF24DEB7F40045F1A2 /* Database.swift */; };
 		B6DFD24524C85E2C00EDA575 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6DFD24424C85E2C00EDA575 /* AppDelegate.swift */; };
 		B6DFD24724C85E2C00EDA575 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6DFD24624C85E2C00EDA575 /* SceneDelegate.swift */; };
 		B6DFD24924C85E2C00EDA575 /* TaskListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6DFD24824C85E2C00EDA575 /* TaskListView.swift */; };
@@ -51,6 +54,9 @@
 		B6579CF524C8660000CCD5BF /* TaskListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListViewModel.swift; sourceTree = "<group>"; };
 		B6A8B1B824D6D0AB0045F1A2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B6A8B1C824DE71E60045F1A2 /* TaskRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskRepository.swift; sourceTree = "<group>"; };
+		B6A8B1CB24DEB5EA0045F1A2 /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
+		B6A8B1CD24DEB6FC0045F1A2 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		B6A8B1CF24DEB7F40045F1A2 /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
 		B6DFD24124C85E2C00EDA575 /* FirestoreTodo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FirestoreTodo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6DFD24424C85E2C00EDA575 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B6DFD24624C85E2C00EDA575 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -132,6 +138,7 @@
 			isa = PBXGroup;
 			children = (
 				B6A8B1C824DE71E60045F1A2 /* TaskRepository.swift */,
+				B6A8B1CB24DEB5EA0045F1A2 /* UserRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -205,6 +212,7 @@
 			isa = PBXGroup;
 			children = (
 				B6DFD27524C85F1900EDA575 /* Task.swift */,
+				B6A8B1CD24DEB6FC0045F1A2 /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -214,6 +222,7 @@
 			children = (
 				B6DFD24424C85E2C00EDA575 /* AppDelegate.swift */,
 				B6DFD24624C85E2C00EDA575 /* SceneDelegate.swift */,
+				B6A8B1CF24DEB7F40045F1A2 /* Database.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -481,7 +490,10 @@
 				B6DFD24724C85E2C00EDA575 /* SceneDelegate.swift in Sources */,
 				B6DFD27A24C8634500EDA575 /* TaskCellViewModel.swift in Sources */,
 				B6A8B1C924DE71E60045F1A2 /* TaskRepository.swift in Sources */,
+				B6A8B1CE24DEB6FC0045F1A2 /* User.swift in Sources */,
 				B6DFD24924C85E2C00EDA575 /* TaskListView.swift in Sources */,
+				B6A8B1CC24DEB5EA0045F1A2 /* UserRepository.swift in Sources */,
+				B6A8B1D024DEB7F40045F1A2 /* Database.swift in Sources */,
 				B6579CF624C8660000CCD5BF /* TaskListViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

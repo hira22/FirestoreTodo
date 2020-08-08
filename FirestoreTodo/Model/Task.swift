@@ -13,11 +13,10 @@ import FirebaseFirestoreSwift
 
 struct Task: Codable, Identifiable {
     @DocumentID var id: String?
+    @ServerTimestamp var createdAt: Timestamp?
     
     var title: String
     var completed: Bool
-    
-    @ServerTimestamp var createdAt: Timestamp?
 }
 
 #if DEBUG
