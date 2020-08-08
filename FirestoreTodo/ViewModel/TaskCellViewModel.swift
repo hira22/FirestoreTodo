@@ -6,8 +6,8 @@
 //  Copyright © 2020 hiraoka. All rights reserved.
 //
 
-import Foundation
 import Combine
+import Foundation
 
 class TaskCellViewModel: ObservableObject, Identifiable {
     @Published var taskRepository: TaskRepository = .init()
@@ -23,28 +23,28 @@ class TaskCellViewModel: ObservableObject, Identifiable {
         
         $task
             .map { (task: Task) in
-            task.completed ? "checkmark.circle.fill" : "circle"
-        }
-        .assign(to: \.completionStateIconName, on: self)
-        .store(in: &cancellableSet)
+                task.completed ? "checkmark.circle.fill" : "circle"
+            }
+            .assign(to: \.completionStateIconName, on: self)
+            .store(in: &cancellableSet)
         
         $task
-            .compactMap {(task: Task) in
-            task.id
-        }
-        .assign(to: \.id, on: self)
-        .store(in: &cancellableSet)
+            .compactMap { (task: Task) in
+                task.id
+            }
+            .assign(to: \.id, on: self)
+            .store(in: &cancellableSet)
         
         $task
             .dropFirst()
             .debounce(for: 0.8, scheduler: RunLoop.main)
             .sink { (task: Task) in
                 self.taskRepository.updateTask(task)
-        }
-        .store(in: &cancellableSet)
+            }
+            .store(in: &cancellableSet)
     }
     
     func removeTask() {
-        self.taskRepository.removeTask(task)
+        taskRepository.removeTask(task)
     }
 }

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+
 import FirebaseFirestore
 import FirebaseFirestoreSwift
 
@@ -20,12 +21,12 @@ struct Task: Codable, Identifiable {
 }
 
 #if DEBUG
-let testDataTasks: [Task] = [
-    Task(title: "Implement the UI", completed: true),
-    Task(title: "Task", completed: true),
-    Task(title: "AAAAAAAAA", completed: false),
-    Task(title: "BBBBBBBBB", completed: false),
-    Task(title: "CCCCCCCCC", completed: false),
-    Task(title: "DDDDDDDDD", completed: false),
-]
+    let testDataTasks: [Task] = [
+        Task(title: "Implement the UI", completed: true),
+        Task(title: "Task", completed: true),
+        Task(title: "AAAAAAAAA", completed: false),
+        Task(title: "BBBBBBBBB", completed: false),
+        Task(title: "CCCCCCCCC", completed: false),
+        Task(title: "DDDDDDDDD", completed: false),
+    ]
 #endif

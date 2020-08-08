@@ -7,29 +7,29 @@
 //
 
 import Foundation
+
 import FirebaseFirestore
 import FirebaseFirestoreSwift
 
 class TaskRepository: ObservableObject {
-    
     private let db = Firestore.firestore()
     
     @Published var tasks: [Task] = []
     
     init() {
-        self.loadData()
+        loadData()
     }
     
     private func loadData() {
         db.collection("tasks").order(by: "createdAt")
-            .addSnapshotListener { (querySnapshot: QuerySnapshot?, error: Error?) in
-            if let querySnapshot = querySnapshot {
-                self.tasks = querySnapshot.documents
-                    .compactMap { (document: QueryDocumentSnapshot) -> Task? in
+            .addSnapshotListener { (querySnapshot: QuerySnapshot?, _: Error?) in
+                if let querySnapshot = querySnapshot {
+                    self.tasks = querySnapshot.documents
+                        .compactMap { (document: QueryDocumentSnapshot) -> Task? in
                             try! document.data(as: Task.self)
+                        }
                 }
             }
-        }
     }
     
     func addTask(_ task: Task) {
@@ -38,7 +38,7 @@ class TaskRepository: ObservableObject {
     
     func updateTask(_ task: Task) {
         guard let id = task.id else { return }
-            try! db.collection("tasks").document(id).setData(from: task)
+        try! db.collection("tasks").document(id).setData(from: task)
     }
     
     func removeTask(_ task: Task) {

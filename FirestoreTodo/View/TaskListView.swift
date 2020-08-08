@@ -45,7 +45,9 @@ struct ContentView_Previews: PreviewProvider {
         TaskListView()
     }
 }
+
 // MARK: TaskCell
+
 struct TaskCell: View {
     @ObservedObject var taskCellVM: TaskCellViewModel
     
@@ -58,7 +60,7 @@ struct TaskCell: View {
                 .frame(width: 20, height: 20, alignment: .center)
                 .onTapGesture {
                     self.taskCellVM.task.completed.toggle()
-            }
+                }
             TextField("Enter the task title", text: $taskCellVM.task.title, onCommit: {
                 self.onCommit(self.taskCellVM.task)
             })
@@ -67,6 +69,7 @@ struct TaskCell: View {
 }
 
 // MARK: AddNewTaskButton
+
 struct AddNewTaskButton: View {
     @Binding var presentAddNewItem: Bool
     

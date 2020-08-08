@@ -6,11 +6,10 @@
 //  Copyright © 2020 hiraoka. All rights reserved.
 //
 
-import Foundation
 import Combine
+import Foundation
 
 class TaskListViewModel: ObservableObject {
-    
     @Published private var taskRepository: TaskRepository
     
     @Published var taskCellViewModels: [TaskCellViewModel] = []
@@ -18,10 +17,10 @@ class TaskListViewModel: ObservableObject {
     private var cancellableSet = Set<AnyCancellable>()
     
     init(repository: TaskRepository = .init()) {
-        self.taskRepository = repository
+        taskRepository = repository
         
-        self.taskRepository.$tasks
-            .map { (tasks:[Task]) in tasks.map (TaskCellViewModel.init) }
+        taskRepository.$tasks
+            .map { (tasks: [Task]) in tasks.map(TaskCellViewModel.init) }
             .assign(to: \.taskCellViewModels, on: self)
             .store(in: &cancellableSet)
     }
