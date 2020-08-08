@@ -6,11 +6,16 @@ target 'FirestoreTodo' do
   use_frameworks!
 
   # Pods for FirestoreTodo
+  # MARK: Firebase
   pod 'Firebase/Auth'
   pod 'Firebase/Analytics'
   pod 'Firebase/Firestore'
   pod 'FirebaseFirestoreSwift'
+  
+  # MARK: Formatter
+  pod 'SwiftFormat/CLI'
 
+  
   target 'FirestoreTodoTests' do
     inherit! :search_paths
     # Pods for testing
