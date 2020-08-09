@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		2FE3F3BC17D215D3EA16E9B7 /* Pods_FirestoreTodoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 090FE795A9E78AD014640CF3 /* Pods_FirestoreTodoUITests.framework */; };
 		65FCD3F3FDE5A138462C7C9F /* Pods_FirestoreTodoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FCD480E10D806794F58180C /* Pods_FirestoreTodoTests.framework */; };
+		B638B45124DEDD6D008E2CCF /* SignInWithAppleCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B638B45024DEDD6D008E2CCF /* SignInWithAppleCoordinator.swift */; };
+		B638B45324DF9A87008E2CCF /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B638B45224DF9A87008E2CCF /* SignInViewModel.swift */; };
 		B6579CF624C8660000CCD5BF /* TaskListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6579CF524C8660000CCD5BF /* TaskListViewModel.swift */; };
 		B6A8B1B924D6D0AB0045F1A2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B6A8B1B824D6D0AB0045F1A2 /* GoogleService-Info.plist */; };
 		B6A8B1C924DE71E60045F1A2 /* TaskRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A8B1C824DE71E60045F1A2 /* TaskRepository.swift */; };
@@ -53,6 +55,9 @@
 		47FEFF94702EC952BC3A39DD /* Pods-FirestoreTodoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirestoreTodoTests.debug.xcconfig"; path = "Target Support Files/Pods-FirestoreTodoTests/Pods-FirestoreTodoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5F0CE73613494D964335753A /* Pods-FirestoreTodo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirestoreTodo.release.xcconfig"; path = "Target Support Files/Pods-FirestoreTodo/Pods-FirestoreTodo.release.xcconfig"; sourceTree = "<group>"; };
 		A88C6A2062C1B83B14F351BE /* Pods-FirestoreTodo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirestoreTodo.debug.xcconfig"; path = "Target Support Files/Pods-FirestoreTodo/Pods-FirestoreTodo.debug.xcconfig"; sourceTree = "<group>"; };
+		B638B45024DEDD6D008E2CCF /* SignInWithAppleCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInWithAppleCoordinator.swift; sourceTree = "<group>"; };
+		B638B45224DF9A87008E2CCF /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
+		B638B45424DF9C58008E2CCF /* FirestoreTodo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FirestoreTodo.entitlements; sourceTree = "<group>"; };
 		B6579CF524C8660000CCD5BF /* TaskListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListViewModel.swift; sourceTree = "<group>"; };
 		B6A8B1B824D6D0AB0045F1A2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B6A8B1C824DE71E60045F1A2 /* TaskRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskRepository.swift; sourceTree = "<group>"; };
@@ -141,6 +146,7 @@
 		B638B44F24DEDCDC008E2CCF /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				B638B45024DEDD6D008E2CCF /* SignInWithAppleCoordinator.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -179,8 +185,9 @@
 		B6DFD24324C85E2C00EDA575 /* FirestoreTodo */ = {
 			isa = PBXGroup;
 			children = (
-				B638B44F24DEDCDC008E2CCF /* Service */,
+				B638B45424DF9C58008E2CCF /* FirestoreTodo.entitlements */,
 				B6A8B1C724DE71CC0045F1A2 /* Repository */,
+				B638B44F24DEDCDC008E2CCF /* Service */,
 				B6DFD27424C85F0A00EDA575 /* Model */,
 				B6DFD27B24C8643200EDA575 /* ViewModel */,
 				B6DFD27724C85FE800EDA575 /* App */,
@@ -254,6 +261,7 @@
 			children = (
 				B6DFD27924C8634500EDA575 /* TaskCellViewModel.swift */,
 				B6579CF524C8660000CCD5BF /* TaskListViewModel.swift */,
+				B638B45224DF9A87008E2CCF /* SignInViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -507,9 +515,11 @@
 				B6A8B1CE24DEB6FC0045F1A2 /* User.swift in Sources */,
 				B6A8B1D624DED7900045F1A2 /* SignInView.swift in Sources */,
 				B6DFD24924C85E2C00EDA575 /* TaskListView.swift in Sources */,
+				B638B45324DF9A87008E2CCF /* SignInViewModel.swift in Sources */,
 				B6A8B1CC24DEB5EA0045F1A2 /* UserRepository.swift in Sources */,
 				B6A8B1D424DED6F40045F1A2 /* SignInWithAppleButton.swift in Sources */,
 				B6A8B1D024DEB7F40045F1A2 /* Database.swift in Sources */,
+				B638B45124DEDD6D008E2CCF /* SignInWithAppleCoordinator.swift in Sources */,
 				B6579CF624C8660000CCD5BF /* TaskListViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -679,6 +689,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = FirestoreTodo/FirestoreTodo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"FirestoreTodo/Preview Content\"";
 				DEVELOPMENT_TEAM = 8ER86CP2SB;
@@ -701,6 +712,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = FirestoreTodo/FirestoreTodo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"FirestoreTodo/Preview Content\"";
 				DEVELOPMENT_TEAM = 8ER86CP2SB;

@@ -6,10 +6,23 @@
 //  Copyright © 2020 hiraoka. All rights reserved.
 //
 
+import Combine
 import SwiftUI
 
 struct SignInView: View {
     @Environment(\.presentationMode) var presentationMode
+    
+    @State var showAlert: Bool = false
+    
+    @ObservedObject var signInWithAppleVM: SignInWithAppleViewModel = SignInWithAppleViewModel()
+    
+    private var cancellableSet: Set<AnyCancellable> = []
+    
+    init() {
+        signInWithAppleVM.$hasError
+            .assign(to: \.showAlert, on: self)
+            .store(in: &cancellableSet)
+    }
     
     var body: some View {
         VStack {
@@ -17,8 +30,13 @@ struct SignInView: View {
             SignInWithAppleButton()
                 .frame(width: 280, height: 45)
                 .onTapGesture {
-                    self.presentationMode.wrappedValue.dismiss()
+                    self.signInWithAppleVM.link {
+                        self.presentationMode.wrappedValue.dismiss()
+                    }
                 }
+        }
+        .alert(isPresented: $showAlert) {
+            Alert(title: Text("Error"), message: Text("oh, no. we have some error. "), dismissButton: .default(Text("OK")))
         }
     }
 }
