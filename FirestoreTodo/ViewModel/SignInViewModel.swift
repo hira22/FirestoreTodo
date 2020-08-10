@@ -9,16 +9,23 @@
 import Combine
 import Foundation
 
-class SignInWithAppleViewModel: ObservableObject {
-    @Published var hasError: Bool = false
+class SignInViewModel: ObservableObject {
+    @Published var onError: Bool = false
+    @Published var errorMessage: String?
     
-    private let userRepository: UserRepository = UserRepository()
+    private let userRepository: UserRepository
     
-    func link(succeed: @escaping () -> Void) {
+    init(repository: UserRepository = .init()) {
+        userRepository = repository
+    }
+    
+    func linkWithApple(succeed: @escaping () -> Void) {
         userRepository.linkWithApple { (result: Result<Void, Error>) in
             switch result {
             case .success(): succeed()
-            case .failure: self.hasError = true
+            case let .failure(error):
+                self.onError = true
+                self.errorMessage = error.localizedDescription
             }
         }
     }

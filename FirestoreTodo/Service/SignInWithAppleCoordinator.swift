@@ -11,33 +11,30 @@ import CryptoKit
 import Foundation
 
 class SignInWithAppleCoordinator: NSObject {
-    private var onSignIn: ((_ idToken: String, _ nonce: String) -> Void)?
+    private var onSignIn: ((_ idToken: String, _ nonce: String?) -> Void)?
     
     // Unhashed nonce.
-    private var currentNonce: String!
+    private var currentNonce: String?
     
-    func startSignInWithAppleFlow(onSignIn: @escaping (_ idToken: String, _ nonce: String) -> Void) {
+    func startSignInWithAppleFlow(onSignIn: @escaping (_ idToken: String, _ nonce: String?) -> Void) {
         self.onSignIn = onSignIn
-        currentNonce = Nonce().encryptedNonce
         
         let appleIDProvider = ASAuthorizationAppleIDProvider()
         let request = appleIDProvider.createRequest()
         request.requestedScopes = [.fullName, .email]
-        request.nonce = currentNonce
+//        request.nonce = Nonce().nonce
         
         let authorizationController = ASAuthorizationController(authorizationRequests: [request])
         authorizationController.delegate = self
         authorizationController.presentationContextProvider = self
         authorizationController.performRequests()
+        currentNonce = request.nonce
     }
 }
 
 extension SignInWithAppleCoordinator: ASAuthorizationControllerDelegate {
     func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
         if let appleIDCredential = authorization.credential as? ASAuthorizationAppleIDCredential {
-            guard let nonce = currentNonce else {
-                fatalError("Invalid state: A login callback was received, but no login request was sent.")
-            }
             guard let appleIDToken = appleIDCredential.identityToken else {
                 print("Unable to fetch identity token")
                 return
@@ -47,7 +44,7 @@ extension SignInWithAppleCoordinator: ASAuthorizationControllerDelegate {
                 return
             }
             
-            onSignIn?(idTokenString, nonce)
+            onSignIn?(idTokenString, currentNonce)
         }
     }
     
@@ -64,9 +61,7 @@ extension SignInWithAppleCoordinator: ASAuthorizationControllerPresentationConte
 }
 
 struct Nonce {
-    var encryptedNonce: String {
-        sha256(randomNonceString())
-    }
+    var nonce: String { sha256(randomNonceString()) }
     
     private func sha256(_ input: String) -> String {
         let inputData = Data(input.utf8)

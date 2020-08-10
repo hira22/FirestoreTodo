@@ -14,7 +14,7 @@ class TaskListViewModel: ObservableObject {
     
     @Published var taskCellViewModels: [TaskCellViewModel] = []
     
-    private var cancellableSet = Set<AnyCancellable>()
+    private var cancellableSet: Set<AnyCancellable> = []
     
     init(repository: TaskRepository = .init()) {
         taskRepository = repository

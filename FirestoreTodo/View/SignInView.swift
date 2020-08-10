@@ -10,19 +10,11 @@ import Combine
 import SwiftUI
 
 struct SignInView: View {
-    @Environment(\.presentationMode) var presentationMode
+    @Environment(\.presentationMode) private var presentationMode
     
-    @State var showAlert: Bool = false
+    @ObservedObject private var signInVM: SignInViewModel = SignInViewModel()
     
-    @ObservedObject var signInWithAppleVM: SignInWithAppleViewModel = SignInWithAppleViewModel()
-    
-    private var cancellableSet: Set<AnyCancellable> = []
-    
-    init() {
-        signInWithAppleVM.$hasError
-            .assign(to: \.showAlert, on: self)
-            .store(in: &cancellableSet)
-    }
+    @State private var inputTextSubject: CurrentValueSubject<String, Never> = .init("")
     
     var body: some View {
         VStack {
@@ -30,13 +22,13 @@ struct SignInView: View {
             SignInWithAppleButton()
                 .frame(width: 280, height: 45)
                 .onTapGesture {
-                    self.signInWithAppleVM.link {
+                    self.signInVM.linkWithApple {
                         self.presentationMode.wrappedValue.dismiss()
                     }
                 }
         }
-        .alert(isPresented: $showAlert) {
-            Alert(title: Text("Error"), message: Text("oh, no. we have some error. "), dismissButton: .default(Text("OK")))
+        .alert(isPresented: $signInVM.onError) {
+            Alert(title: Text("Error"), message: Text($signInVM.errorMessage.wrappedValue ?? ""), dismissButton: .default(Text("OK")))
         }
     }
 }

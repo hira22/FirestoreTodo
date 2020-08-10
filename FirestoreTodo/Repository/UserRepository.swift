@@ -46,7 +46,7 @@ class UserRepository: ObservableObject {
     func linkWithApple(coordinator: SignInWithAppleCoordinator = .init(), completion: @escaping (Result<Void, Error>) -> Void) {
         signInWithAppleCoordinator = coordinator
         
-        signInWithAppleCoordinator.startSignInWithAppleFlow { (idToken: String, nonce: String) in
+        signInWithAppleCoordinator.startSignInWithAppleFlow { (idToken: String, nonce: String?) in
             let credential: OAuthCredential = OAuthProvider.credential(withProviderID: "apple.com",
                                                                        idToken: idToken,
                                                                        rawNonce: nonce)
@@ -57,7 +57,9 @@ class UserRepository: ObservableObject {
                     case AuthErrorCode.credentialAlreadyInUse.rawValue:
                         guard let updatedCredential = error.userInfo[AuthErrorUserInfoUpdatedCredentialKey] as? OAuthCredential else { return }
                         self.signInWithApple(with: updatedCredential, completion: completion)
-                    default: break
+                    case AuthErrorCode.providerAlreadyLinked.rawValue:
+                        self.signInWithApple(with: credential, completion: completion)
+                    default: completion(.failure(error))
                     }
                     return
                 }
