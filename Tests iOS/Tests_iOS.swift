@@ -1,14 +1,15 @@
 //
-//  FirestoreTodoUITests.swift
-//  FirestoreTodoUITests
+//  Tests_iOS.swift
+//  Tests iOS
 //
-//  Created by hiraoka on 2020/07/22.
+//  Created by hiraoka on 2020/09/21.
 //  Copyright © 2020 hiraoka. All rights reserved.
 //
 
 import XCTest
 
-class FirestoreTodoUITests: XCTestCase {
+class Tests_iOS: XCTestCase {
+
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
 
@@ -34,7 +35,7 @@ class FirestoreTodoUITests: XCTestCase {
     func testLaunchPerformance() throws {
         if #available(macOS 10.15, iOS 13.0, tvOS 13.0, *) {
             // This measures how long it takes to launch your application.
-            measure(metrics: [XCTOSSignpostMetric.applicationLaunch]) {
+            measure(metrics: [XCTApplicationLaunchMetric()]) {
                 XCUIApplication().launch()
             }
         }
