@@ -6,15 +6,14 @@
 //  Copyright © 2020 hiraoka. All rights reserved.
 //
 
-import Foundation
-
 import FirebaseFirestore
 import FirebaseFirestoreSwift
+import Foundation
 
 struct Task: Codable, Identifiable {
     @DocumentID var id: String?
     @ServerTimestamp var createdAt: Timestamp?
-    
+
     var title: String
     var completed: Bool
 }

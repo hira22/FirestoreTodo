@@ -6,8 +6,7 @@
 //  Copyright © 2020 hiraoka. All rights reserved.
 //
 
-import Foundation
-
 import FirebaseFirestore
+import Foundation
 
 let db: Firestore = Firestore.firestore()

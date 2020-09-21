@@ -10,10 +10,10 @@ import SwiftUI
 
 struct TaskListView: View {
     @ObservedObject var taskListVM = TaskListViewModel()
-    
+
     @State var presentAddNewItem: Bool = false
     @State private var showSignInForm: Bool = false
-    
+
     var body: some View {
         NavigationView {
             VStack(alignment: .leading) {
@@ -22,9 +22,12 @@ struct TaskListView: View {
                         TaskCell(taskCellVM: taskCellVM)
                     }
                     .onDelete(perform: remove)
-                    
+
                     if presentAddNewItem {
-                        TaskCell(taskCellVM: TaskCellViewModel(task: Task(title: "", completed: false))) { (task: Task) in
+                        TaskCell(
+                            taskCellVM: TaskCellViewModel(task: Task(title: "", completed: false))
+                        ) {
+                            (task: Task) in
                             self.taskListVM.addTask(task: task)
                             self.presentAddNewItem.toggle()
                         }
@@ -37,7 +40,7 @@ struct TaskListView: View {
             .navigationBarTitle("Tasks")
         }
     }
-    
+
     func remove(offsets: IndexSet) {
         taskListVM.taskCellViewModels[offsets.first!].removeTask()
     }
@@ -53,9 +56,9 @@ struct ContentView_Previews: PreviewProvider {
 
 struct TaskCell: View {
     @ObservedObject var taskCellVM: TaskCellViewModel
-    
+
     var onCommit: (Task) -> Void = { _ in }
-    
+
     var body: some View {
         HStack {
             Image(systemName: taskCellVM.completionStateIconName)
@@ -64,9 +67,11 @@ struct TaskCell: View {
                 .onTapGesture {
                     self.taskCellVM.task.completed.toggle()
                 }
-            TextField("Enter the task title", text: $taskCellVM.task.title, onCommit: {
-                self.onCommit(self.taskCellVM.task)
-            })
+            TextField(
+                "Enter the task title", text: $taskCellVM.task.title,
+                onCommit: {
+                    self.onCommit(self.taskCellVM.task)
+                })
         }
     }
 }
@@ -75,7 +80,7 @@ struct TaskCell: View {
 
 struct AddNewTaskButton: View {
     @Binding var presentAddNewItem: Bool
-    
+
     var body: some View {
         Button(action: { self.presentAddNewItem.toggle() }) {
             HStack {

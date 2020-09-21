@@ -6,9 +6,8 @@
 //  Copyright © 2020 hiraoka. All rights reserved.
 //
 
-import SwiftUI
-
 import Firebase
+import SwiftUI
 
 @main
 struct FirestoreTodoApp: App {
@@ -17,7 +16,7 @@ struct FirestoreTodoApp: App {
         FirebaseApp.configure()
         userRepository.signInAnonymously()
     }
-    
+
     var body: some Scene {
         WindowGroup {
             TaskListView()

@@ -6,15 +6,14 @@
 //  Copyright © 2020 hiraoka. All rights reserved.
 //
 
-import Foundation
-
 import FirebaseFirestore
 import FirebaseFirestoreSwift
+import Foundation
 
 struct User: Codable, Identifiable {
     @DocumentID var id: String?
     @ServerTimestamp var createdAt: Timestamp?
     @ServerTimestamp var updatedAt: Timestamp?
-    
+
     var name: String
 }

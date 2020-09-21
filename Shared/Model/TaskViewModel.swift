@@ -10,7 +10,7 @@ import Foundation
 
 class TaskCellViewModel: ObservableObject {
     @Published var tasks: [Task]
-    
+
     init() {
         tasks = testDataTasks
     }

@@ -12,29 +12,29 @@ import Foundation
 class TaskCellViewModel: ObservableObject, Identifiable {
     @Published var taskRepository: TaskRepository = .init()
     @Published var task: Task
-    
+
     var id: String = ""
     @Published var completionStateIconName: String = ""
-    
+
     private var cancellableSet = Set<AnyCancellable>()
-    
+
     init(task: Task) {
         self.task = task
-        
+
         $task
             .map { (task: Task) in
                 task.completed ? "checkmark.circle.fill" : "circle"
             }
             .assign(to: \.completionStateIconName, on: self)
             .store(in: &cancellableSet)
-        
+
         $task
             .compactMap { (task: Task) in
                 task.id
             }
             .assign(to: \.id, on: self)
             .store(in: &cancellableSet)
-        
+
         $task
             .dropFirst()
             .debounce(for: 0.8, scheduler: RunLoop.main)
@@ -43,7 +43,7 @@ class TaskCellViewModel: ObservableObject, Identifiable {
             }
             .store(in: &cancellableSet)
     }
-    
+
     func removeTask() {
         taskRepository.removeTask(task)
     }

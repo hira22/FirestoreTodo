@@ -12,13 +12,13 @@ import Foundation
 class SignInViewModel: ObservableObject {
     @Published var onError: Bool = false
     @Published var errorMessage: String?
-    
+
     private let userRepository: UserRepository
-    
+
     init(repository: UserRepository = .init()) {
         userRepository = repository
     }
-    
+
     func linkWithApple(succeed: @escaping () -> Void) {
         userRepository.linkWithApple { (result: Result<Void, Error>) in
             switch result {
