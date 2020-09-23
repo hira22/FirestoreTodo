@@ -18,11 +18,18 @@ struct SignInView: View {
 
     var body: some View {
         VStack {
-            Text("Hello, World!")
             SignInWithAppleButton()
                 .frame(width: 280, height: 45)
                 .onTapGesture {
                     self.signInVM.linkWithApple {
+                        self.presentationMode.wrappedValue.dismiss()
+                    }
+                }
+            
+            SignInWithGoogleButton()
+                .frame(width: 280, height: 45)
+                .onTapGesture {
+                    signInVM.linkWithGoogle {
                         self.presentationMode.wrappedValue.dismiss()
                     }
                 }

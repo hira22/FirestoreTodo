@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2E45353CE5883313A5DBB41F /* Pods_FirestoreTodo__iOS_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CBE35C2268FD9B5D1094C22 /* Pods_FirestoreTodo__iOS_.framework */; };
 		A82EDF748D32094FB5502EB9 /* Pods_FirestoreTodo__macOS_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9940B06F705A3B61F6413312 /* Pods_FirestoreTodo__macOS_.framework */; };
+		B66EBA2F2519984400DE8F2A /* SignInWithGoogleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66EBA2E2519984400DE8F2A /* SignInWithGoogleButton.swift */; };
 		B6882A4A2518967D0098C221 /* Tests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6882A492518967D0098C221 /* Tests_iOS.swift */; };
 		B6882A552518967D0098C221 /* Tests_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6882A542518967D0098C221 /* Tests_macOS.swift */; };
 		B6882A572518967D0098C221 /* FirestoreTodoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6882A2F2518967C0098C221 /* FirestoreTodoApp.swift */; };
@@ -63,6 +64,7 @@
 		B638B45024DEDD6D008E2CCF /* SignInWithAppleCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInWithAppleCoordinator.swift; sourceTree = "<group>"; };
 		B638B45224DF9A87008E2CCF /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
 		B6579CF524C8660000CCD5BF /* TaskListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListViewModel.swift; sourceTree = "<group>"; };
+		B66EBA2E2519984400DE8F2A /* SignInWithGoogleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInWithGoogleButton.swift; sourceTree = "<group>"; };
 		B6882A2F2518967C0098C221 /* FirestoreTodoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreTodoApp.swift; sourceTree = "<group>"; };
 		B6882A312518967D0098C221 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B6882A362518967D0098C221 /* FirestoreTodo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FirestoreTodo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -277,6 +279,7 @@
 			children = (
 				B6DFD24824C85E2C00EDA575 /* TaskListView.swift */,
 				B6A8B1D324DED6F40045F1A2 /* SignInWithAppleButton.swift */,
+				B66EBA2E2519984400DE8F2A /* SignInWithGoogleButton.swift */,
 				B6A8B1D524DED7900045F1A2 /* SignInView.swift */,
 			);
 			path = View;
@@ -305,6 +308,7 @@
 				B6882A332518967D0098C221 /* Frameworks */,
 				B6882A342518967D0098C221 /* Resources */,
 				C0C535AA74E7A508A161B5B3 /* [CP] Embed Pods Frameworks */,
+				1639EA6C034AFC203DA41CD0 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -452,6 +456,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		1639EA6C034AFC203DA41CD0 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FirestoreTodo (iOS)/Pods-FirestoreTodo (iOS)-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FirestoreTodo (iOS)/Pods-FirestoreTodo (iOS)-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FirestoreTodo (iOS)/Pods-FirestoreTodo (iOS)-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		30F1F53E3B41B18C90E45E05 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -542,6 +563,7 @@
 				B693FDFD25189A490060D24F /* UserRepository.swift in Sources */,
 				B693FDFE25189A490060D24F /* SignInWithAppleCoordinator.swift in Sources */,
 				B693FDFF25189A490060D24F /* Task.swift in Sources */,
+				B66EBA2F2519984400DE8F2A /* SignInWithGoogleButton.swift in Sources */,
 				B693FE0025189A490060D24F /* User.swift in Sources */,
 				B693FE0125189A490060D24F /* TaskCellViewModel.swift in Sources */,
 				B693FE0225189A490060D24F /* TaskListViewModel.swift in Sources */,

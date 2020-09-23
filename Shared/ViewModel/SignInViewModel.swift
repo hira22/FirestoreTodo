@@ -22,6 +22,17 @@ class SignInViewModel: ObservableObject {
     func linkWithApple(succeed: @escaping () -> Void) {
         userRepository.linkWithApple { (result: Result<Void, Error>) in
             switch result {
+            case .success: succeed()
+            case let .failure(error):
+                self.onError = true
+                self.errorMessage = error.localizedDescription
+            }
+        }
+    }
+    
+    func linkWithGoogle(succeed: @escaping () -> Void ) {
+        userRepository.linkWithGoogle { (result: Result<Void, Error>) in
+            switch result {
             case .success(): succeed()
             case let .failure(error):
                 self.onError = true

@@ -22,29 +22,47 @@ class UserRepository: ObservableObject {
 
         configureUser(uid: uid)
     }
+    
+    private func configureUser(uid: String) {
+        db.collection("users").document(uid)
+            .addSnapshotListener { (documentSnapshot: DocumentSnapshot?, error: Error?) in
+                if let error = error {
+                    print(error)
+                    return
+                }
+                self.currentUser = try! documentSnapshot?.data(as: User.self)
+            }
+    }
 
+}
+
+// MARK: Sign in Anonymously
+extension UserRepository {
     func signInAnonymously() {
         guard Auth.auth().currentUser == nil else { return }
-
+        
         Auth.auth().signInAnonymously { (authDataResult: AuthDataResult?, error: Error?) in
             if let error = error {
                 print(error)
                 return
             }
-
+            
             let uid: String = authDataResult!.user.uid
-
+            
             if let userInfo: AdditionalUserInfo = authDataResult?.additionalUserInfo,
-                userInfo.isNewUser
+               userInfo.isNewUser
             {
                 _ = try! db.collection("users").document(uid).setData(
                     from: User(id: uid, name: "Anonymous"))
             }
-
+            
             self.configureUser(uid: uid)
         }
     }
+}
 
+// MARK: Sign in with Apple
+extension UserRepository {
     func linkWithApple(
         coordinator: SignInWithAppleCoordinator = .init(),
         completion: @escaping (Result<Void, Error>) -> Void
@@ -96,15 +114,11 @@ class UserRepository: ObservableObject {
             completion(.success(()))
         }
     }
+}
 
-    private func configureUser(uid: String) {
-        db.collection("users").document(uid)
-            .addSnapshotListener { (documentSnapshot: DocumentSnapshot?, error: Error?) in
-                if let error = error {
-                    print(error)
-                    return
-                }
-                self.currentUser = try! documentSnapshot?.data(as: User.self)
-            }
+// MARK: Sign in with Google
+extension UserRepository {
+    func linkWithGoogle(completion: @escaping (Result<Void, Error>) -> Void) {
+        
     }
 }

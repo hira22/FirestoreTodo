@@ -11,11 +11,7 @@ import SwiftUI
 
 @main
 struct FirestoreTodoApp: App {
-    private lazy var userRepository: UserRepository = .init()
-    init() {
-        FirebaseApp.configure()
-        userRepository.signInAnonymously()
-    }
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
 
     var body: some Scene {
         WindowGroup {

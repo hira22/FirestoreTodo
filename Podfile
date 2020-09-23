@@ -12,6 +12,8 @@ target 'FirestoreTodo (iOS)' do
   pod 'Firebase/Analytics'
   pod 'Firebase/Firestore'
   pod 'FirebaseFirestoreSwift'
+  
+  pod 'GoogleSignIn'
 
 end
 
